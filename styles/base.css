@@ -1,0 +1,15 @@
+:root {
+  --blue-1: rgb(36, 102, 137);
+  --blue-2: rgb(4, 175, 120);
+  --blue-3: rgb(66, 129, 163);
+}
+
+.container {
+  margin: 10px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+

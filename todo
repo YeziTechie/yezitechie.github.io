@@ -1,0 +1,10 @@
+structure:
+
+  header: name, intro
+  scroll: experience the luxury on sea with us
+  section: description and options, plus
+  section: servicces
+  section: menu
+  section: about us
+  section: contact us
+  footer
