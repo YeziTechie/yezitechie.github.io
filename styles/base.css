@@ -1,15 +1,192 @@
-:root {
+/* :root {
   --blue-1: rgb(36, 102, 137);
   --blue-2: rgb(4, 175, 120);
   --blue-3: rgb(66, 129, 163);
 }
 
-.container {
-  margin: 10px;
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --1: #99ccff;
+  --2: #70b8ff;
+  --3: #0affff;
+  --4: #007fff;
+} */
+
+:root {
+  --1:#f6fafd;
+  --2:#b3cfe5;
+  --3:#4a7fa7;
+  --4:#1a3d63;
+  --5:#0a1931;
+  --g:#CD9900;
+  --text-size: clamp(2rem,6vw,6rem);
+  --f-h: "Cinzel", sans-serif;
+}
+
+* {
+  box-sizing:border-box
 }
 
 
+body {
+  font-family: "outfit", arial, sans-serif;
+  background-color: black;
+  color: var(--1);
+  margin: 0;
+  font-weight: 100;
+  overflow-x: hidden;
+}
+
+.container {
+  /* margin: 10px; */
+  /* padding: 10px; */
+}
+
+section, header, footer {
+  z-index: 1;
+}
 
 
+.glow-button {
+  position: relative;
+  backdrop-filter: blur(20px);
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  font-weight: 100;
+
+}
+
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: 50px;
+  background: linear-gradient(
+    45deg,
+  var(--5) 0%,
+   transparent 30%,
+    var(--g) 60%,
+    transparent 90%,
+    var(--5) 100%
+  );
+  background-size: 200% 200%;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  animation: borderFlow 1s linear infinite paused;
+  pointer-events: none;
+}
+
+.glow-button:hover::before {
+  animation-play-state:running;
+}
+
+.glow-button:hover {
+  background: rgba(0, 0, 0, 0.329);
+  box-shadow: 0px 0px 10px var(--5);
+  color: var(--g);
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.luxury-line {
+  width: 30%;
+  height: 1px;
+  margin: 30px auto;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    var(--1) 50%,
+    transparent 100%
+  );
+  border-radius: 999px;
+}
+
+.gradient-text {
+  font-weight: 100;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--g), white);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+ .btn-1 {
+      --glow-color: rgba(255, 255, 0, 0.178);
+      --glow-spread-color: black;
+      --enhanced-glow-color: purple;
+      --btn-color: white;
+      border: 0.25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--1);
+      font-size: 15px;
+      font-weight: 100;
+      cursor: pointer;
+      background-color: transparent;
+      margin-top: 30px;
+      border-radius: 40px;
+      outline: none;
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.74em 0.25em var(--glow-color);
+      text-shadow: 0 0 0.5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .btn-1::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: 0.7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+    }
+
+    .btn-1:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em 0.25em var(--glow-color),
+      0 0 4em 2em var(--glow-spread-color),
+      inset 0 0 0.75em 0.25em var(--glow-color);
+    }
+
+    .btn-1:active {
+      box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+      0 0 2.5em 2em var(--glow-spread-color),
+      inset 0 0 0.5em 0.25em var(--glow-color);
+    }

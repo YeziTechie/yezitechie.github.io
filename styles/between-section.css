@@ -1,0 +1,49 @@
+
+.content-section{
+  min-height:100vh;
+  padding:8vh 5%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  z-index:1;
+}
+
+/* each between section occupies a viewport and only signals active state */
+.between-section{
+  position:relative;
+  height:100vh;
+  pointer-events:none; /* prevent accidental interactions */
+}
+
+/* single fixed text used by all sections (keeps same place on screen) */
+.between-section h1{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(1);
+  font-size:var(--text-size);
+  text-transform:uppercase;
+  font-weight:100;
+  background:linear-gradient(to bottom, var(--g), white, var(--3));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  opacity:0;
+  transition: opacity 600ms cubic-bezier(.2,.9,.2,1), transform 600ms cubic-bezier(.2,.9,.2,1);
+  will-change:opacity,transform;
+  pointer-events:none;
+  z-index:0; /* above page content */
+}
+
+/* breathing animation that does NOT touch opacity */
+@keyframes breathe {
+  from { letter-spacing: 0px; transform: translate(-50%,-50%) scale(1); }
+  to   { letter-spacing: 2px; transform: translate(-50%,-50%) scale(1.02); }
+}
+
+/* active class — fades the text in and runs subtle breathe */
+.between-section.active h1{
+  opacity:1;
+  animation: breathe 6s ease-in-out infinite alternate;
+}
