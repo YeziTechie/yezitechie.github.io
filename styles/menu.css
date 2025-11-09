@@ -1,0 +1,160 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: brightness(130%) blur(50px);
+}
+
+.menu .title {
+  font-size: 4rem;
+}
+
+.yacht-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.yacht-category-title {
+  text-align: left;
+  font-size: 2rem;
+  padding-left: 10px;
+  border-left: 1px solid var(--g);
+}
+
+.yachts {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.yacht {
+  padding: 10px;
+  display: flex;
+  backdrop-filter: blur(50px);
+  background-color: rgba(255, 255, 255, 0.068) ;
+  color: white;
+  max-width: 300px;
+  height: auto;
+  row-gap: 5px;
+  flex-direction: column;
+  box-shadow: 10px 5px 10px black;
+  border: 1px solid var(--3);
+  transition: all ease 0.6s;
+}
+
+.yacht:hover {
+  box-shadow: 20px 15px 20px black;
+  transform: translate(-5px, -5px);
+}
+.top-detail {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-detail p {
+  margin:0;
+}
+
+.category {
+  text-transform: uppercase;
+}
+
+.image {
+  width: 100%;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+.main-detail {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.name {
+  text-align: left;
+}
+
+.name h3 {
+  font-weight: 100;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.guests {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.guests p {
+  margin:0;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.detail-btn, .book-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;  padding: 5px 20px;
+  background-color: rgba(255, 255, 255, 0.123);
+  border: 1px solid var(--3);
+  font-size: 0.8rem;
+  column-gap: 10px;
+  transition: 0.6s all ease;
+  font-weight: 100;
+  color: white;
+  font-family: 'Outfit';
+  border-radius: 30px;
+}
+
+.detail-btn:hover, .book-btn:hover {
+  color: var(--g);
+  font-weight: 400;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 20px var(--g);
+
+}
+
+.icon {
+  width: 20px;
+  height: 30px;
+  stroke-width: 0.4;  stroke-linecap: round;
+  transition: 0.6s all ease;
+  stroke-linejoin: round;
+  fill:white;
+  
+}
+
+.eye-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.detail-btn:hover svg, .book-btn:hover svg{
+fill:var(--g);
+
+}
