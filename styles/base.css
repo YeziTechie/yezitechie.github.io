@@ -60,7 +60,7 @@ section, header, footer {
   letter-spacing: 1px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   font-weight: 100;
 
 }
@@ -85,7 +85,7 @@ section, header, footer {
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
-  animation: borderFlow 1s linear infinite paused;
+  animation: borderFlow 3s linear infinite paused;
   pointer-events: none;
 }
 
@@ -94,9 +94,9 @@ section, header, footer {
 }
 
 .glow-button:hover {
-  background: rgba(0, 0, 0, 0.329);
-  box-shadow: 0px 0px 10px var(--5);
-  color: var(--g);
+  backdrop-filter: none;
+  box-shadow: 0px 0px 50px var(--5);
+  color: var(--5);
 }
 
 @keyframes borderFlow {

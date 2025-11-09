@@ -1,11 +1,20 @@
 .services {
   position: relative;
-  height: 120vh;
+  height: max-content;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: black;
   color: white;
+  border: 1px solid var(--5);
+  box-shadow: 0px 0px 100px black;
+}
+
+.services .content {
+  padding: 10px;
+  backdrop-filter: blur(20px);
+    border: 1px solid var(--5);
+  box-shadow: 0px 0px 100px black;
 }
 
 .title {
@@ -16,10 +25,14 @@
 .title h3 {
   font-weight: 100;
   font-size: 2rem;
+  opacity: 0.6;
+  margin-bottom: 100px;
 }
 
 .title h1 {
   font-size: 4rem;
+  color: var(--1);
+  font-weight: 200;
 }
 
 .service-items {
@@ -27,7 +40,6 @@
   flex-direction: row;
   padding: 10px ;
   flex-wrap: wrap;
-  overflow-y: scroll;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -40,22 +52,28 @@
   text-align: left;
   font-size: 2rem;
   font-weight: 300;
-  color: var(--g);
+  transition: all ease 0.6s;
+  color: var(--1);
   margin: 0;
 }
 
 .service {
-  backdrop-filter: blur(20px);
   width: 300px;
-  border-radius: 15px;
-  box-shadow: 10px 5px 10px var(--5);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.315);
   border: 1px solid var(--5);
   transition: all ease 0.6s;
+  background-color: rgba(0, 0, 0, 0.226) ;
 }
 
 .service:hover {
-  box-shadow: 15px 10px 20px var(--5);
-  transform: translate(-5px, -5px);
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.61);
+  background-color: rgba(0, 0, 0, 0) ;
+  transform: translate(0px, -5px) scale(1.01);
+}
+
+.service:hover .head h2 {
+  color: var(--g);
+  font-weight: 100;
 }
 
 .service .desc {
@@ -71,10 +89,11 @@
 
 .service .pic {
   width: 100%;
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
 .service .pic img {
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
   width: 100%;
+  box-shadow: 0px 0px 50px var(--4);
 }
