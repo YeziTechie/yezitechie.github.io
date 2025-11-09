@@ -1,19 +1,30 @@
- (function(){
-    const sections = document.querySelectorAll('.between-section');
+document.addEventListener('DOMContentLoaded', () => {
+  const background = document.createElement('div');
+  background.id = 'background-layer';
+  document.body.appendChild(background);
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        // When the SECTION's center area is visible, mark it active.
-        if (entry.intersectionRatio > 0.5) {
-          entry.target.classList.add('active');
-        } else {
-          entry.target.classList.remove('active');
-        }
-      });
-    }, {
-      threshold: [0, 0.25, 0.5, 0.75, 1], // use 0.5 as the main trigger
-      root: null
+  const sections = document.querySelectorAll('.between-section');
+  sections.forEach((section, i) => {
+    const clone = section.querySelector('h1').cloneNode(true);
+    clone.dataset.index = i;
+    background.appendChild(clone);
+  });
+
+  const bgTexts = background.querySelectorAll('h1');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const index = [...sections].indexOf(entry.target);
+      if (index === -1) return;
+
+      const h1 = bgTexts[index];
+      if (entry.intersectionRatio > 0.5) {
+        h1.classList.add('active');
+      } else {
+        h1.classList.remove('active');
+      }
     });
+  }, { threshold: 0.5 });
 
-    sections.forEach(s => observer.observe(s));
-  })();
+  sections.forEach(s => observer.observe(s));
+});
