@@ -22,16 +22,61 @@
   padding-left: 10px;
   border-left: 1px solid var(--g);
 }
-
 .yachts {
   display: flex;
-  width: 100%;
   flex-direction: row;
   column-gap: 20px;
-  justify-content: center;
-  row-gap: 20px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  padding: 40px 20px;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--g) var(--5);
 }
+
+/* Modern scrollbar styling (WebKit browsers: Chrome, Safari, Edge) */
+.yachts::-webkit-scrollbar {
+  height: 8px;
+}
+
+.yachts::-webkit-scrollbar-track {
+  background: var(--5);
+  border-radius: 10px;
+}
+
+.yachts::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--3), var(--2));
+  border-radius: 10px;
+  border: 2px solid var(--5);
+}
+
+.yachts::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--g), var(--2));
+}
+
+/* Optional: add a subtle fade shadow at edges to suggest scrolling */
+.yachts::before,
+.yachts::after {
+  content: "";
+  position: sticky;
+  top: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.yachts::before {
+  left: 0;
+}
+
+.yachts::after {
+  right: 0;
+}
+
 
 .yacht {
   padding: 10px;
@@ -39,7 +84,8 @@
   backdrop-filter: blur(50px);
   background-color: rgba(255, 255, 255, 0.068) ;
   color: white;
-  max-width: 300px;
+  min-width: 300px;
+  max-width: 400px;
   height: auto;
   row-gap: 5px;
   flex-direction: column;
@@ -49,9 +95,13 @@
 }
 
 .yacht:hover {
-  box-shadow: 20px 15px 20px black;
-  transform: translate(-5px, -5px);
+  border: 1px solid var(--g);
 }
+
+.yacht:hover .name h3{
+  color: var(--g);
+}
+
 .top-detail {
   display: flex;
   flex-direction: row;
@@ -89,6 +139,7 @@
 
 .name h3 {
   font-weight: 100;
+  transition: all ease 0.6s;
   font-size: 1.8rem;
   text-transform: uppercase;
   margin: 0;
@@ -133,10 +184,9 @@
 }
 
 .detail-btn:hover, .book-btn:hover {
-  color: var(--g);
-  font-weight: 400;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0px 0px 20px var(--g);
+  transform: translate(0px, -5px);
+  background-color: transparent;
+  box-shadow: 0px 5px 20px black;
 
 }
 
@@ -157,5 +207,54 @@
 
 .detail-btn:hover svg, .book-btn:hover svg{
 fill:var(--g);
+
+}
+
+
+.yachts {
+  transform-origin: center bottom;
+  animation: combined 6s infinite ease-in-out alternate;
+}
+
+.yacht-holder {
+    transform: translateY(15px);
+  transform-origin: center bottom;
+  animation: top-to-bottom 4s infinite ease-in-out alternate;
+}
+
+.yacht {
+    transform: rotate(-2deg);
+  transform-origin: center bottom;
+  animation: left-to-right 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes top-to-bottom {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+
+@keyframes combined {
+
+  0% {
+    transform: rotate(-2deg) translate(0px, 0px);
+  }
+
+  100% {
+    transform: rotate(2deg) translate(0px, 20px);
+  }
 
 }
