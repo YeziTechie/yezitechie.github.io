@@ -5,9 +5,12 @@
   z-index: 1;
 }
 
-.menu .title {
-  font-size: 4rem;
+.menu .title h1 {
+  font-size: 3rem;
+  text-align: left;
 }
+
+
 
 .yacht-container {
   display: flex;
@@ -16,12 +19,21 @@
   row-gap: 20px;
 }
 
+.yacht-category-title h2{
+  font-weight: 100;
+  padding: 10px 0px;
+
+}
 .yacht-category-title {
   text-align: left;
-  font-size: 2rem;
+  font-size: 2rem;  
+  margin-top: 100px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.486) ,30%, rgba(0, 0, 0, 0));
   padding-left: 10px;
   border-left: 1px solid var(--g);
 }
+
+
 .yachts {
   display: flex;
   flex-direction: row;
@@ -35,7 +47,26 @@
   padding: 40px 20px;
   width: 100%;
   scrollbar-width: thin;
-  scrollbar-color: var(--g) var(--5);
+  scrollbar-color: black var(--5);
+  background: linear-gradient(
+    to top,
+    var(--5) 0%,
+    var(--4) 10%,
+    var(--3) 20%,
+    var(--5) 23%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: seaMove 6s ease-in-out infinite alternate,  combined 6s infinite ease-in-out alternate ;
+}
+
+@keyframes seaMove {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 /* Modern scrollbar styling (WebKit browsers: Chrome, Safari, Edge) */
@@ -89,14 +120,16 @@
   height: auto;
   row-gap: 5px;
   flex-direction: column;
-  box-shadow: 10px 5px 10px black;
+  box-shadow: 0px 5px 5px var(--5);
   border: 1px solid var(--3);
   transition: all ease 0.6s;
 }
 
 .yacht:hover {
   border: 1px solid var(--g);
+  transition: ease 0.6s all;
 }
+
 
 .yacht:hover .name h3{
   color: var(--g);
@@ -176,6 +209,7 @@
   border: 1px solid var(--3);
   font-size: 0.8rem;
   column-gap: 10px;
+  cursor: pointer;
   transition: 0.6s all ease;
   font-weight: 100;
   color: white;
@@ -213,12 +247,13 @@ fill:var(--g);
 
 .yachts {
   transform-origin: center bottom;
-  animation: combined 6s infinite ease-in-out alternate;
+  transition: ease 0.6s all;
 }
 
 .yacht-holder {
     transform: translateY(15px);
   transform-origin: center bottom;
+  transition: ease 0.6s all;
   animation: top-to-bottom 4s infinite ease-in-out alternate;
 }
 
@@ -250,11 +285,11 @@ fill:var(--g);
 @keyframes combined {
 
   0% {
-    transform: rotate(-2deg) translate(0px, 0px);
+    transform: rotate(-1deg);
   }
 
   100% {
-    transform: rotate(2deg) translate(0px, 20px);
+    transform: rotate(1deg) ;
   }
 
 }

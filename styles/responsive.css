@@ -1,0 +1,14 @@
+@media  screen and (max-width: 600px) {
+  .services .title h1 {
+    font-size: 2.4rem;
+  }
+  .services .title h3 {
+    font-size: 1.3rem;
+  }
+  .menu .title h1 {
+    font-size: 2.4rem;
+  }
+  .yacht-category-title h2 {
+    font-size: 1.6rem;
+  }
+}
