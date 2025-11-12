@@ -54,7 +54,7 @@
     var(--4) 10%,
     var(--3) 20%,
     var(--5) 23%,
-    transparent 100%
+    transparent 50%
   );
   background-size: 200% 200%;
   animation: seaMove 6s ease-in-out infinite alternate,  combined 6s infinite ease-in-out alternate ;
