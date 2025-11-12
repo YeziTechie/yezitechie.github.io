@@ -7,11 +7,25 @@ nav {
   height: 60px;
   padding: 10px 30px;
   border-radius: 30px;
+  transition: ease 0.6s all;
   box-sizing: border-box;
   z-index: 10;
   right: 25px;
+  margin: 0;
   backdrop-filter: blur(8px);
   background-color: rgba(0, 0, 0, 0.13);
+}
+
+nav.active { backdrop-filter: blur(0px); background-color: transparent }
+
+
+nav.active .logo {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2, 1.2);
+}
+
+.nav.active .logo img {
+   transform:scale(1.2, 1.2);
 }
 
 .logo img{
@@ -27,11 +41,11 @@ nav {
 .link a {
   text-decoration: none;
   color: var(--1);
-  transition: ease 0.4s all;
+  transition: ease 0.6s all;
 }
 
 .link a:hover {
-  color: var(--2);
+  color: var(--g);
 }
 
 
@@ -56,3 +70,119 @@ nav {
     rgba(255, 255, 255, 0) 80%
   );
 } 
+
+.anchor-btn {
+  background: none;
+  border: none;
+  transition: all 0.6s ease;
+  z-index: 50;
+  position: fixed;
+  right: 45px;
+  top: 35px;
+  cursor: pointer;
+  transform-origin: top center;
+}
+
+.anchor-btn svg {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.4s ease;
+}
+
+
+.anchor-btn.active {
+  top: 480px;
+  transition: all ease 0.6s;
+  z-index: 50;
+}
+
+.phone-nav {
+  position: fixed;
+  top: 0px;
+  left: 55px;
+  z-index: 5;
+  backdrop-filter: blur(100px);
+  border: 1px solid var(--g);
+  border-top: none;
+  right: 55px;
+
+  height: 0px;
+  transition: all ease 0.6s;
+  overflow-y: hidden;
+}
+.phone-nav.active {
+  position: fixed;
+  left: 55px;
+  z-index: 5;
+  backdrop-filter: blur(100px);
+  right: 55px;
+  height: 400px;
+}
+
+.phone-nav .links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.chain {
+  display: flex;
+  z-index: 20;
+  flex-direction: column;
+  justify-content: center;
+  transition: all ease 0.6s;
+  position: fixed;
+  right: 50px;
+  top: -68px;
+  width: 40px;
+}
+
+.chain.active {
+  top: 377px; 
+}
+
+  
+.ch-1 {transform: translate(0px, 0px);}
+.ch-2 {transform: translate(0px, -20px);}
+.ch-3 {transform: translate(0px, -40px);}
+.ch-4 {transform: translate(0px, -60px);}
+.ch-5 {transform: translate(0px, -80px);}
+
+.chain div {
+  width: 40px;
+  height: 40px;
+}
+
+.chain svg, .chain path {
+  height: 40px;
+  width: 40px;
+  fill: black;
+
+}
+
+.chain, .anchor-btn {
+  display:none;
+}
+
+.behind-nav {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  left: 0;
+    background-color: rgba(0, 0, 0, 0.438);
+  backdrop-filter: blur(30px);
+  height: 0;
+  transition:ease all 0.6s;
+  right: 0;
+}
+
+.behind-nav.active {
+  top: 0;
+
+  left: 0;
+  height: 100vh;
+  right: 0;
+}

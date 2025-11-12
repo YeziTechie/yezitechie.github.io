@@ -12,3 +12,23 @@
     font-size: 1.6rem;
   }
 }
+
+@media  screen and (max-width: 700px) {
+  nav .links {
+    display: none;
+  }
+  .chain, .anchor-btn {
+    display:flex;
+  }
+
+  nav .logo {
+    position: absolute;
+    left: 25px; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: ease all 0.6s;
+    z-index: 20; 
+    pointer-events: none;
+}
+
+}
