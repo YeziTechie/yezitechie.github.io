@@ -1,0 +1,250 @@
+.yacht-details {
+  position: relative;
+  height: max-content;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .yacht-detail {
+    flex-direction: column;
+  }
+}
+
+
+
+
+.yacht-detail {
+  
+  display: flex;
+  flex-direction: row;
+  margin: 100px 0px;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid var(--2);
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 100px black;
+}
+
+.yacht-main-img, .yacht-info {
+  width: 100%;
+  height: 100%;
+}
+
+.yacht-img-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0px 10px;  
+  transform: translateY(15px);
+  animation: top-to-bottom 4s infinite ease-in-out alternate;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.288);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.book- btn
+
+.class {
+  color: var(--2);
+  text-shadow: 0px 1px 1px white;
+  text-transform: uppercase;
+}
+
+.yacht-main-img {
+  position: relative;
+  transform: rotate(-2deg);
+  animation: left-to-right 3.5s ease-in-out infinite alternate;
+}
+
+.yacht-main-img img {
+  width: 100%;
+  transform: translateY(15px);
+  animation: top-to-bottom 4s infinite ease-in-out alternate;
+  border: 1px solid var(--2);
+  box-shadow: 0px 0px 50px black;
+}
+
+.yacht-info {
+  text-align: left;
+}
+
+* {
+  font-weight: 100;
+  margin: 0;
+}
+
+.name {
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--2);
+  margin-bottom: 20px;
+}
+
+.specification-title {
+  margin: 20px 0px;
+}
+
+.specification span {
+  color: var(--g);
+   padding-right: 10px;
+
+}
+
+.specification {
+   display: flex;
+   flex-direction: row;
+   margin: 5px 0px;
+}
+
+.yacht-gallery {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-right: 1px solid var(--2);
+  border-left: 1px solid var(--2);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background: linear-gradient(to top, var(--5), rgba(255, 0, 0, 0));
+  animation: combined 3.5s ease-in-out infinite alternate;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  padding: 40px 20px;
+  width: 100%;
+  box-shadow: 0px 20px 20px black;
+  margin-bottom: 100px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--g) var(--5);
+}
+
+/* Modern scrollbar styling (WebKit browsers: Chrome, Safari, Edge) */
+.yacht-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.yacht-gallery::-webkit-scrollbar-track {
+  background: var(--5);
+  border-radius: 10px;
+}
+
+.yacht-gallery::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--3), var(--2));
+  border-radius: 10px;
+  border: 2px solid var(--5);
+}
+
+.yacht-gallery::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--g), var(--2));
+}
+
+/* Optional: add a subtle fade shadow at edges to suggest scrolling */
+.yacht-gallery::before,
+.yacht-gallery::after {
+  content: "";
+  position: sticky;
+  top: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.yacht-gallery::before {
+  left: 0;
+}
+
+.yacht-gallery::after {
+  right: 0;
+}
+
+.yacht-img {
+  transform: rotate(-2deg);
+  animation: left-to-right 3.5s ease-in-out infinite alternate;
+}
+
+.yacht-img img {
+  transform: translateY(15px);
+  animation: top-to-bottom 4s infinite ease-in-out alternate;
+  width: 250px;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: 1px solid var(--2);
+  box-shadow: 0px 4px 4px black;
+}
+
+
+.gallery-title {
+  font-size: 1.5rem;
+}
+
+.luxury-line {
+  margin: 70px auto;
+}
+
+
+@keyframes top-to-bottom {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+
+@keyframes combined {
+
+  0% {
+    transform: rotate(-2deg) translate(0px, 0px);
+  }
+
+  100% {
+    transform: rotate(2deg) translate(0px, 20px);
+  }
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .yacht-detail {
+    flex-direction: column;
+  }
+
+  .video-bg {
+  }
+}
